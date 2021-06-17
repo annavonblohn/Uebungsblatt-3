@@ -1,0 +1,42 @@
+﻿<Window x:Class="WPF_Test_AvB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Test_AvB"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="100,-23,-100,22.5">
+        <Button x:Name ="Btn_AddDatensatz" Content="Datensatz hinzufügen" HorizontalAlignment="Left" Height="39" Margin="158,300,0,0" VerticalAlignment="Top" Width="140" Click="Button_Click"/>
+
+        <ListBox x:Name = "ListBx_Datasets" HorizontalAlignment="Left" Height="216" Margin="451,36,0,0" VerticalAlignment="Top" Width="229" ToolTip ="ListBx_Datasets_SelectionChanged" SelectionChanged="ListBx_Datasets_SelectionChanged_1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Nachname:"></TextBlock>
+                        <TextBlock Text="{Binding Path=Nachname}"></TextBlock>
+                        <TextBlock Text="Vorname:"></TextBlock>
+                        <TextBlock Text="{Binding Path=Vorname}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Label x:Name = "Lbl_Datasets" Content="Datensätze" HorizontalAlignment="Left" Height="26" Margin="451,5,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBlock x:Name ="TxtBlck_Steckbrief" HorizontalAlignment="Left" Height="97" Margin="451,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="229"><InlineUIContainer>
+                <ToolBar Height="100" Width="227"/>
+            </InlineUIContainer></TextBlock>
+        <Label x:Name = "Lbl_Steckbrief" Content="Steckbrief" HorizontalAlignment="Left" Height="26" Margin="326,295,0,0" VerticalAlignment="Top" Width="68"/>
+        <Button x:Name ="Btn_alphabetisch" Content="alphabetisch " HorizontalAlignment="Left" Height="30" Margin="326,90,0,0" VerticalAlignment="Top" Width="83" Click="Btn_alphabetisch_Click" />
+        <Button x:Name="Btn_zuletzt" Content="zuletzt hinzugefügt " HorizontalAlignment="Left" Height="30" Margin="326,129,0,0" VerticalAlignment="Top" Width="97" Click="Btn_zuletzt_Click"/>
+        <Button x:Name="Btn_nurEmployees" Content="nur Mitarbeitende " HorizontalAlignment="Left" Height="30" Margin="326,199,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="Lbl_SortBy" Content="Sort by" HorizontalAlignment="Left" Height="26" Margin="326,59,0,0" VerticalAlignment="Top" Width="83"/>
+        <Button x:Name="Btn_Export"  Content="Exportieren" HorizontalAlignment="Left" Margin="158,350,0,0" VerticalAlignment="Top" Width="140" Height="44" Click="Btn_Export_Click"/>
+        <CheckBox x:Name="ChckBx_Studis_only" Content="" HorizontalAlignment="Left" Height="30" Margin="394,164,0,0" VerticalAlignment="Top" Width="29" Checked="ChckBx_Studis_only_Checked"/>
+        <Label x:Name = "Lbl_Studis_only" Content="nur Studis" HorizontalAlignment="Left" Height="26" Margin="321,159,0,0" VerticalAlignment="Top" Width="68"/>
+        <CheckBox x:Name="ChckBx_Employees_only" Content="" HorizontalAlignment="Left" Height="30" Margin="399,239,0,0" VerticalAlignment="Top" Width="29"/>
+        <Label x:Name = "Lbl_Employees_only" Content="nur Mitarbeitende" HorizontalAlignment="Left" Height="26" Margin="284,234,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="Lbl_DatasetChangeInstruction" Content="Um Datensatz zu ändern/löschen Doppelklick darauf!" HorizontalAlignment="Left" Height="113" Margin="-50,72,0,0" VerticalAlignment="Top" Width="348"/>
+
+    </Grid>
+</Window>
